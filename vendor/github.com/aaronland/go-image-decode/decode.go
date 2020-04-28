@@ -11,7 +11,7 @@ import (
 type InitializeDecoderFunc func(context.Context, string) (Decoder, error)
 
 type Decoder interface {
-	Decode(context.Context, io.Reader) (image.Image, string, error)
+	Decode(context.Context, io.ReadSeeker) (image.Image, string, error)
 }
 
 var decoders roster.Roster

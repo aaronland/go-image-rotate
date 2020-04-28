@@ -27,6 +27,6 @@ func NewJPEGDecoder(ctx context.Context, uri string) (Decoder, error) {
 	return e, nil
 }
 
-func (e *JPEGDecoder) Decode(ctx context.Context, r io.Reader) (image.Image, string, error) {
+func (e *JPEGDecoder) Decode(ctx context.Context, r io.ReadSeeker) (image.Image, string, error) {
 	return image.Decode(r)
 }
